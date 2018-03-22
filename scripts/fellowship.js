@@ -106,19 +106,29 @@ leaveTheShire();
 function forgeTheFellowship() {
   // create a new div called `'the-fellowship'` within `rivendell`
   const div = $("<div>").text("the fellowship").attr("class", "the-fellowship").appendTo($("h1").eq(1));
-  for (let i = 0; i < hobbits.length; i++) {
-    //   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
-    $(".hobbit").appendTo($(".the-fellowship"));
-    alert(hobbits[i] + " has joined your party!")
-  };
-    // after each character is added make an alert that they // have joined your party
+  // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+  $(".buddy").appendTo($(".the-fellowship"));
+  $(".hobbit").appendTo($(".the-fellowship"));
+  // after each character is added make an alert that they // have joined your party
+  // for (let i = 0; i < buddies.length; i++) {
+  //   alert(buddies[i] + " has joined your party!");
+  // }
+  // for (let i = 0; i < hobbits.length; i++) {
+  //   alert(hobbits[i] + " has joined your party!");
   // }
 }
 
 forgeTheFellowship();
 
 function theBalrog(){
-  // your answers here
+   // change the `'Gandalf'` text to `'Gandalf the White'`
+   const gandalf = ($(".buddy").eq(0));
+   gandalf.text("Gandalf the White");
+   gandalf.css({
+    "background-color": "white",
+    "border": "0.07em solid grey"
+   });
+   // apply the following style to the element, make the // background 'white', add a grey border
 }
 
 theBalrog();
