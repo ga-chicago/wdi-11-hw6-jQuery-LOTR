@@ -105,12 +105,14 @@ leaveTheShire();
 
 function forgeTheFellowship() {
   // create a new div called `'the-fellowship'` within `rivendell`
-  const div = $("<div>").text("the-fellowship").attr("class", "the-fellowship").appendTo($("h1").eq(1));
+  const div = $("<div>").text("the fellowship").attr("class", "the-fellowship").appendTo($("h1").eq(1));
   for (let i = 0; i < hobbits.length; i++) {
-    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+    //   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
     $(".hobbit").appendTo($(".the-fellowship"));
+    alert(hobbits[i] + " has joined your party!")
+  };
     // after each character is added make an alert that they // have joined your party
-  }
+  // }
 }
 
 forgeTheFellowship();
