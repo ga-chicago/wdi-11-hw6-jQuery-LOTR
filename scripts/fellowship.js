@@ -21,31 +21,55 @@ var body = document.body;
 var section = '<section></section>';
 
 function makeMiddleEarth() {
-  // your answers here
-}
+  let $middleEarth = $('<section>').attr('id','middle-earth')
+   
+   for(let i = 0; i < lands.length; i++){
+      let $lands = $('<article>').append($('<h1>').text(lands[i]))
+      $middleEarth.append($lands)
 
+   }
+
+   $('body').append($middleEarth)
+
+}
 makeMiddleEarth();
 
 function makeHobbits(){
-  // your answers here
+  let $ulTag = $('<ul>')
+
+  for(let i = 0; i < hobbits.length; i ++){
+    $ulTag.append($('<li>').addClass('hobbit').text(hobbits[i]))
+
+  }
+
+  $ulTag.appendTo($('article').eq(0))
 }
 
 makeHobbits();
 
 function keepItSecretKeepItSafe(){
-  // your answers here
+   $('<div>').attr('id','the-ring').addClass('magic-imbued-jewelry').appendTo($('.hobbit').eq(0))
 }
 
 keepItSecretKeepItSafe();
 
 function makeBuddies(){
-  // your answers here
+  const $aside = $('<aside>')
+
+  const $ulTag = $('<ul>')
+  for(let i = 0; i <buddies.length; i ++){
+    $ulTag.append($('<li>').text(buddies[i]))
+  }
+
+  $ulTag.appendTo($aside.appendTo($('article').eq(1)))
+
 }
 
 makeBuddies();
 
 function beautifulStranger(){
-  // your answers here
+  $('li').eq(7).text('Aragorn')
+  
 }
 
 beautifulStranger();
