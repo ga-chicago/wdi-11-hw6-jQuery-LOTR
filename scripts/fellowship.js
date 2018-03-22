@@ -110,12 +110,12 @@ function forgeTheFellowship() {
   $(".buddy").appendTo($(".the-fellowship"));
   $(".hobbit").appendTo($(".the-fellowship"));
   // after each character is added make an alert that they // have joined your party
-  // for (let i = 0; i < buddies.length; i++) {
-  //   alert(buddies[i] + " has joined your party!");
-  // }
-  // for (let i = 0; i < hobbits.length; i++) {
-  //   alert(hobbits[i] + " has joined your party!");
-  // }
+  for (let i = 0; i < buddies.length; i++) {
+    alert(buddies[i] + " has joined your party!");
+  }
+  for (let i = 0; i < hobbits.length; i++) {
+    alert(hobbits[i] + " has joined your party!");
+  }
 }
 
 forgeTheFellowship();
@@ -134,7 +134,11 @@ function theBalrog(){
 theBalrog();
 
 function hornOfGondor() {
-  // your answers here
+   // pop up an alert that the horn of gondor has been blown
+   alert("The horn of Gondor has been blown!");
+   // Boromir's been killed by the Uruk-hai!
+   // Remove `Boromir` from the Fellowship
+    ($(".buddy").eq(4)).remove();
 }
 
 hornOfGondor();
