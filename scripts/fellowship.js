@@ -77,8 +77,19 @@ function keepItSecretKeepItSafe(){
 keepItSecretKeepItSafe();
 
 function makeBuddies(){
-  // your answers here
+   // create an `aside` tag
+   const aside = $('<aside>');
+   // attach an `unordered list` of the `'buddies'` in the aside
+   for(i = 0; i < buddies.length; i++) {
+    const li = $('<li>');
+    li.text(buddies[i]);
+    li.appendTo($(aside));
+  }
+
+   // insert your aside as a child element of `rivendell`
+   aside.appendTo($('article')[1])
 }
+
 
 makeBuddies();
 
