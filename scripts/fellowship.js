@@ -79,22 +79,23 @@ keepItSecretKeepItSafe();
 function makeBuddies(){
    // create an `aside` tag
    const aside = $('<aside>');
+   const ulRivendell = $('<ul>');
    // attach an `unordered list` of the `'buddies'` in the aside
    for(i = 0; i < buddies.length; i++) {
     const li = $('<li>');
     li.text(buddies[i]);
-    li.appendTo($(aside));
+    $(li).appendTo($(ulRivendell));
   }
-
+  ulRivendell.appendTo($(aside));
    // insert your aside as a child element of `rivendell`
-   aside.appendTo($('article')[1])
+   aside.appendTo($('article')[1]);
 }
-
 
 makeBuddies();
 
 function beautifulStranger(){
-  // your answers here
+  // change the `'Strider'` text to `'Aragorn'`
+
 }
 
 beautifulStranger();
