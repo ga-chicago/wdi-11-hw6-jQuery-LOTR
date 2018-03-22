@@ -165,7 +165,10 @@ function weWantsIt() {
 weWantsIt();
 
 function thereAndBackAgain(){
-  // your answers here
+   // remove `Gollum` and `the Ring` from the document
+   $("#gollum").remove();
+   // Move all the `hobbits` back to `the shire`
+   $(".hobbit").appendTo($("h1").eq(0));
 }
 
 thereAndBackAgain();
