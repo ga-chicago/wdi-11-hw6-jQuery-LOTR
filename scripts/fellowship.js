@@ -21,13 +21,35 @@ var body = document.body;
 var section = '<section></section>';
 
 function makeMiddleEarth() {
-  // your answers here
+  // Create a section tag with an id of 'middle-earth'
+  const $newSection = $('<section>').addClass('middle-earth');
+
+  // add each land as an `article` tag
+  // inside each `article` tag include an `h1` with the name of the land  
+  for(i = 0; i < lands.length; i++){
+    $newSection.append($('<article>').append($('<h1>').text(lands[i])))
+  }
+
+  // append 'middle-earth' to your document 'body'
+  $('body').append($newSection);
 }
 
 makeMiddleEarth();
 
 function makeHobbits(){
-  // your answers here
+  const $theShire = $($('article')[0]);
+  const $ul = $('<ul/>');
+  console.log($ul, "<------ ul")
+  $theShire.append($ul);
+  //const $li = $('<li>').text;
+  //$ul.append($li);
+ for(i = 0; i < hobbits.length; i++){
+  console.log(hobbits[i])
+   $ul.append('<li>'+ hobbits[i] +'</li>');
+  // display an `unordered list` of hobbits in the shire
+  // (which is the second article tag on the page)
+  // give each hobbit a class of `hobbit`
+ }
 }
 
 makeHobbits();
