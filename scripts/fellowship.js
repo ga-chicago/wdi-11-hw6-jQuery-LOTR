@@ -144,7 +144,11 @@ function hornOfGondor() {
 hornOfGondor();
 
 function itsDangerousToGoAlone() {
-  // your answers here
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   ($(".hobbit").eq(0)).appendTo(($("article").eq(2)));
+   ($(".hobbit").eq(0)).appendTo(($("article").eq(2)));
+   // add a div with an id of `'mount-doom'` to `Mordor`
+   ($("<div>").attr("id","mount-doom")).appendTo(($("article").eq(2)));
 }
 
 itsDangerousToGoAlone();
