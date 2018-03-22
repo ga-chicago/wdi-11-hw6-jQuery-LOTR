@@ -19,7 +19,7 @@ var buddies = [
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.body;
 var section = '<section></section>';
-  const newSection = $("<section>").attr("id", "middle-earth");
+const newSection = $("<section>").attr("id", "middle-earth");
 
 
 
@@ -154,7 +154,12 @@ function itsDangerousToGoAlone() {
 itsDangerousToGoAlone();
 
 function weWantsIt() {
-  // your answers here
+   // Create a div with an id of `'gollum'` and add it to Mordor
+   ($("<div>").attr("id","gollum")).appendTo(($("article").eq(2)));
+   // Remove `the ring` from `Frodo` and give it to `Gollum`
+   $("#the-ring").appendTo($("#gollum"));
+   // Move Gollum into Mount Doom
+   $("#gollum").appendTo($("#mount-doom"));
 }
 
 weWantsIt();
