@@ -19,45 +19,98 @@ var buddies = [
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.body;
 var section = '<section></section>';
+  const newSection = $("<section>").attr("id", "middle-earth");
+
+
 
 function makeMiddleEarth() {
-  // your answers here
-}
+const newSection = $("<section>").attr("id", "middle-earth");
+
+  newSection.appendTo("body");
+
+    for (let i = 0; i < lands.length; i++) {
+      const newArticle = $("<article>");
+      newArticle.appendTo(newSection);
+      const newH1 = $("<h1>");
+      newH1.text(lands[i]);
+      newH1.appendTo(newArticle);
+    }
+};
 
 makeMiddleEarth();
 
 function makeHobbits(){
-  // your answers here
+  // create a ul for all the hobbits to be in
+  const ul = $("<ul>")
+  for (let i = 0; i < hobbits.length; i++) {
+    // give each hobbit a class of `hobbit`
+    const hobbit = $("<li>").attr("class", "hobbit");
+    // name each hobbit
+    hobbit.text(hobbits[i]);
+    // append each hobbit to the ul
+    hobbit.appendTo(ul);
+   
+  }
+  // append only to the shire
+  ul.appendTo($("h1").eq(0));
 }
 
 makeHobbits();
 
 function keepItSecretKeepItSafe(){
-  // your answers here
+  // create a div with an id of `'the-ring'`
+  const div = $("<div>").attr("id", "the-ring");
+   // give the div a class of `'magic-imbued-jewelry'`
+  div.attr("class", "magic-imbued-jewelry");
+   // add the ring as a child of `Frodo`
+  div.appendTo($(".hobbit").eq(0));
 }
 
 keepItSecretKeepItSafe();
 
 function makeBuddies(){
-  // your answers here
+  // create an `aside` tag
+  const aside = $("<aside>");
+  // create ul tag
+  const ul = $("<ul>");
+  // attach an `unordered list` of the `'buddies'` in the aside
+  ul.appendTo(aside);
+  for (let i = 0; i < buddies.length; i++) {
+    // create li for each of the buddies
+    const li = $("<li>");
+    li.text(buddies[i]);
+    li.attr("class", "buddy");
+    // append each li to the ul
+    li.appendTo(ul);
+  }
+   // insert your aside as a child element of `rivendell`
+   aside.appendTo($("h1").eq(1));
 }
 
 makeBuddies();
 
 function beautifulStranger(){
-  // your answers here
+  // change strider text to aragorn
+  $(".buddy").eq(3).text("Aragorn");
 }
 
 beautifulStranger();
 
-function leaveTheShire(){
-  // your answers here
+function leaveTheShire() {
+  // assemble the `hobbits` and move them to `rivendell`
+  $(".hobbit").appendTo($("h1").eq(1));
 }
 
 leaveTheShire();
 
 function forgeTheFellowship() {
-  // your answers here
+  // create a new div called `'the-fellowship'` within `rivendell`
+  const div = $("<div>").text("the-fellowship").attr("class", "the-fellowship").appendTo($("h1").eq(1));
+  for (let i = 0; i < hobbits.length; i++) {
+    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+    $(".hobbit").appendTo($(".the-fellowship"));
+    // after each character is added make an alert that they // have joined your party
+  }
 }
 
 forgeTheFellowship();
