@@ -38,16 +38,40 @@ function makeMiddleEarth() {
 
 makeMiddleEarth();
 
-function makeHobbits(){
-     // display an `unordered list` of hobbits in the shire
-    // (which is the second article tag on the page)
-   // give each hobbit a class of `hobbit`
+function makeHobbits() {
+  // display an `unordered list` of hobbits in the shire
+
+  // create ul (get it in a variable since we will keep working with it)
+  // put ul in shire (1st article tag)
+ const ulShire = $('<ul>');
+
+  for(i = 0; i < hobbits.length; i++) {
+    // create li for this hobbit
+    const li = $('<li>');
+
+    // give the li class hobbit
+    li.attr('class', 'hobbit');
+
+    // put text in li
+    li.text(hobbits[i]);
+
+    // append li to ul
+    $(li).appendTo($(ulShire));
+  }
+  // append ul to article.shire
+  ulShire.appendTo($('article')[0]);
 }
 
 makeHobbits();
 
 function keepItSecretKeepItSafe(){
-  // your answers here
+   // create a div with an id of `'the-ring'`
+   const newDiv = $('<div>');
+   newDiv.attr('id', 'the-ring');
+   // give the div a class of `'magic-imbued-jewelry'`
+   newDiv.addClass('magic-imbued-jewelry');
+   // add the ring as a child of `Frodo`
+   newDiv.appendTo($('li')[0]);
 }
 
 keepItSecretKeepItSafe();
