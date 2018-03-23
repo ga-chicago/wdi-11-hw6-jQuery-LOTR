@@ -176,17 +176,16 @@ function weWantsIt() {
     // let theRing = $('id:contains("the-ring")')
     // theRing.appendTo(gollum);
 
-   // Move Gollum into Mount Doom
-   $('div contains: ("gollum")').appendTo($(mountDoomDiv))
+   // // Move Gollum into Mount Doom
+   // $('div contains: ("gollum")').appendTo($(mountDoomDiv))
 }
 
 weWantsIt();
 
 function thereAndBackAgain(){
   // your answers here
-  // let moveHobbits = $('li.hobbit');
-  // //move to ulRivendell
-  // moveHobbits.appendTo($('article')[0]);
+  let moveHobbits = $('li.hobbit');
+  moveHobbits.appendTo($('article')[0]);
 }
 
 thereAndBackAgain();
