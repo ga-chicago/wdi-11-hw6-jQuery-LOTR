@@ -21,73 +21,124 @@ var body = document.body;
 var section = '<section></section>';
 
 function makeMiddleEarth() {
-  // your answers here
-}
+  let $middleEarth = $('<section>').attr('id','middle-earth')
+   
+   for(let i = 0; i < lands.length; i++){
+      let $lands = $('<article>').append($('<h1>').text(lands[i]))
+      $middleEarth.append($lands)
 
+   }
+
+   $('body').append($middleEarth)
+
+}
 makeMiddleEarth();
 
 function makeHobbits(){
-  // your answers here
+  let $ulTag = $('<ul>')
+
+  for(let i = 0; i < hobbits.length; i ++){
+    $ulTag.append($('<li>').addClass('hobbit').text(hobbits[i]))
+
+  }
+
+  $ulTag.appendTo($('article').eq(0))
 }
 
 makeHobbits();
 
 function keepItSecretKeepItSafe(){
-  // your answers here
+   $('<div>').attr('id','the-ring').addClass('magic-imbued-jewelry').appendTo($('.hobbit').eq(0))
 }
 
 keepItSecretKeepItSafe();
 
 function makeBuddies(){
-  // your answers here
+  const $aside = $('<aside>')
+
+  const $ulTag = $('<ul>')
+  for(let i = 0; i <buddies.length; i ++){
+    $ulTag.append($('<li>').text(buddies[i]))
+  }
+
+  $ulTag.appendTo($aside.appendTo($('article').eq(1)))
+
 }
 
 makeBuddies();
 
 function beautifulStranger(){
-  // your answers here
+
+
+  
+  $("li:contains('Strider')").text('Aragorn')
+  
+  
 }
 
 beautifulStranger();
 
 function leaveTheShire(){
-  // your answers here
+  $('.hobbit').appendTo($('article').eq(1))
 }
 
 leaveTheShire();
 
 function forgeTheFellowship() {
-  // your answers here
+ 
+  $('<div>').append($('<h1>').text('the-fellowship')).appendTo($('article').eq(1))
+  const liTags = $('li')
+
+  //adds them to ship one at a time
+  for(let i = 0; i < liTags.length; i ++){
+    liTags.eq([i]).appendTo($("div:contains('the-fellowship')"))
+  }
+
+  alert('The hobbits and buddies have joined the party!!!')
+
 }
 
 forgeTheFellowship();
 
 function theBalrog(){
-  // your answers here
+  $('li:contains("Gandalf the Grey")').text('Gandalf the White').css({
+    'background-color':'white',
+    'border':'7px solid grey'
+  })
+  
 }
 
 theBalrog();
 
 function hornOfGondor() {
-  // your answers here
+  alert('Horn of Gondor has been blown');
+
+  $("li:contains('Boromir')").remove()
 }
 
 hornOfGondor();
 
 function itsDangerousToGoAlone() {
-  // your answers here
+  $("li:contains('Frodo Baggins')").appendTo($('article').eq(2))
+  $('li:contains("Samwise \'Sam\' Gamgee")').appendTo($('article').eq(2)) 
+  $('<div>').attr('id','mount-doom').appendTo($('article').eq(2))
 }
 
 itsDangerousToGoAlone();
 
 function weWantsIt() {
-  // your answers here
+ $('<div>').attr('id','gollum').appendTo($('article').eq(2))
+
+ $('#the-ring').appendTo($('#gollum'))
+
+ $('#gollum').appendTo('#mount-doom')
 }
 
 weWantsIt();
 
 function thereAndBackAgain(){
-  // your answers here
+  $('#gollum').remove()
+  $('.hobbit').appendTo($('article').eq(0))
 }
 
 thereAndBackAgain();
