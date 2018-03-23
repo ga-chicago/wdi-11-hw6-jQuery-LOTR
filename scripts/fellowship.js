@@ -118,7 +118,18 @@ moveHobbits.appendTo($('article')[1]);
 leaveTheShire();
 
 function forgeTheFellowship() {
-  // your answers here
+   //create a new div called `'the-fellowship'` within `rivendell`
+   let fellowshipDiv = $('<div>').addClass('fellowship');
+   $('li').addClass('the-fellowship');
+   fellowshipDiv.appendTo($('article')[1]);
+
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+    let ulFellowship = $('<ul>');
+    let liFellowship = $('<li>'); 
+    let moveHobsnBuds = $('.the-fellowship');
+    moveHobsnBuds.appendTo(fellowshipDiv);
+    alert(moveHobsnBuds.text() + ' has joined the party');
+// }
 }
 
 forgeTheFellowship();
