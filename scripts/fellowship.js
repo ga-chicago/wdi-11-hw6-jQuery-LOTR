@@ -172,13 +172,24 @@ itsDangerousToGoAlone();
 function weWantsIt() {
     // Create a div with an id of `'gollum'` and add it to Mordor
     let gollum = $('<div>').attr('id', 'gollum').appendTo($('article')[2]);
-    // Remove `the ring` from `Frodo` and give it to `Gollum`
-    // let theRing = $('id:contains("the-ring")')
-    // theRing.appendTo(gollum);
+    let frodo = $('li:contains("Frodo Baggins")');
+    let mountDoomDiv = $('<div>').attr('id', 'mount-doom')
 
-   // // Move Gollum into Mount Doom
-   // $('div contains: ("gollum")').appendTo($(mountDoomDiv))
+    // Remove `the ring` from `Frodo` and give it to `Gollum`
+    frodo.removeAttr('id', 'the-ring')
+//can't get ring id to remove from Frodo
+
+    const newDiv = $('<div>');
+    newDiv.attr('id', 'the-ring');
+    newDiv.addClass('magic-imbued-jewelry');
+    newDiv.appendTo(gollum);
 }
+
+// // Move Gollum into Mount Doom
+// $('div: contains("gollum")').appendTo($(mountDoomDiv))
+
+// I can't get this last one to work - every time I try to move gollum, frodo and sam appear 
+// back at mordor
 
 weWantsIt();
 
