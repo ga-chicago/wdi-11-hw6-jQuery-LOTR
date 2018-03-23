@@ -85,37 +85,60 @@ function leaveTheShire(){
 leaveTheShire();
 
 function forgeTheFellowship() {
-  // your answers here
+ 
+  $('<div>').append($('<h1>').text('the-fellowship')).appendTo($('article').eq(1))
+  const liTags = $('li')
+
+  //adds them to ship one at a time
+  for(let i = 0; i < liTags.length; i ++){
+    liTags.eq([i]).appendTo($("div:contains('the-fellowship')"))
+  }
+
+  alert('The hobbits and buddies have joined the party!!!')
+
 }
 
 forgeTheFellowship();
 
 function theBalrog(){
-  // your answers here
+  $('li:contains("Gandalf the Grey")').text('Gandalf the White').css({
+    'background-color':'white',
+    'border':'7px solid grey'
+  })
+  
 }
 
 theBalrog();
 
 function hornOfGondor() {
-  // your answers here
+  alert('Horn of Gondor has been blown');
+
+  $("li:contains('Boromir')").remove()
 }
 
 hornOfGondor();
 
 function itsDangerousToGoAlone() {
-  // your answers here
+  $("li:contains('Frodo Baggins')").appendTo($('article').eq(2))
+  $('li:contains("Samwise \'Sam\' Gamgee")').appendTo($('article').eq(2)) 
+  $('<div>').attr('id','mount-doom').appendTo($('article').eq(2))
 }
 
 itsDangerousToGoAlone();
 
 function weWantsIt() {
-  // your answers here
+ $('<div>').attr('id','gollum').appendTo($('article').eq(2))
+
+ $('#the-ring').appendTo($('#gollum'))
+
+ $('#gollum').appendTo('#mount-doom')
 }
 
 weWantsIt();
 
 function thereAndBackAgain(){
-  // your answers here
+  $('#gollum').remove()
+  $('.hobbit').appendTo($('article').eq(0))
 }
 
 thereAndBackAgain();
