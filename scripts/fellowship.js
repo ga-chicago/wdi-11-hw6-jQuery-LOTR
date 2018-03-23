@@ -93,15 +93,26 @@ function makeBuddies(){
 
 makeBuddies();
 
-function beautifulStranger(){
-  // change the `'Strider'` text to `'Aragorn'`
+// function beautifulStranger(){
+//   // change the `'Strider'` text to `'Aragorn'`
+//   let buddyLis = jQuery('li')
+//   console.log(buddyLis)
+//   let buddyRename = $('Strider')
 
-}
+//   for(let prop in buddyLis.length) {
+//     if(buddyLis[i].innerText === buddyRename);
+//   } 
+//   return buddyLis[i].text("Aragorn")
+// }
 
-beautifulStranger();
+// beautifulStranger();
 
 function leaveTheShire(){
-  // your answers here
+  // assemble the `hobbits` and move them to `rivendell`
+  //call hobbits class
+let moveHobbits = $('li.hobbit');
+  //move to ulRivendell
+moveHobbits.appendTo($('article')[1]);
 }
 
 leaveTheShire();
