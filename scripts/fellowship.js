@@ -92,13 +92,26 @@ function beautifulStranger(){
 beautifulStranger();
 
 function leaveTheShire(){
-  // your answers here
+  // assembly the hobbits and move them to rivendell
+  const $rivendell = $($('article')[1]);
+  $('ul').appendTo($rivendell);
 }
 
 leaveTheShire();
 
 function forgeTheFellowship() {
-  // your answers here
+  // create a new div called 'the-fellowship' within 'rivendell'
+  const $rivendell = $($('article')[1]);
+  const $newDiv = $('div').attr('id', 'the-fellowship');
+  $newDiv.appendTo($rivendell);
+    for(i = 0; i < hobbits.length; i++){
+    //console.log(hobbits[i])
+    $newDiv.append('<li>'+ hobbits[i] +'</li>');
+ }
+   for(i = 0; i < buddies.length; i++){
+    //console.log(buddies[i])
+    $newDiv.append('<li>'+ buddies[i] +'</li>');
+  }
 }
 
 forgeTheFellowship();
