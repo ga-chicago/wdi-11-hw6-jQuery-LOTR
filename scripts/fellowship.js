@@ -45,7 +45,7 @@ function makeHobbits(){
   // (which is the second article tag on the page)
   // give each hobbit a class of `hobbit`
   for(i = 0; i < hobbits.length; i++){
-    console.log(hobbits[i])
+    //console.log(hobbits[i])
     $ul.append('<li>'+ hobbits[i] +'</li>');
  }
 };
@@ -72,19 +72,21 @@ function makeBuddies(){
   const $newAside = $('<aside>');
   //attach an unordered list of the 'buddies' in the aside
   const $rivendell = $($('article')[1]);
-  console.log($rivendell);
+  //console.log($rivendell);
   const $ul2 = $('<ul/>');
   $rivendell.append($ul2);
   for(i = 0; i < buddies.length; i++){
-    console.log(buddies[i])
-    $ul2.append('<li>'+ buddies[i] +'</li>');
+    //console.log(buddies[i])
+    $ul2.append('<li>'+ buddies[i] +'</li>').attr('class', 'buddies');
   }
 };
 
 makeBuddies();
 
 function beautifulStranger(){
-  // your answers here
+  $aragorn = $("li").eq(7);
+  console.log($aragorn);
+  $aragorn.text('Aragorn');
 }
 
 beautifulStranger();
