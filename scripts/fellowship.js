@@ -75,36 +75,49 @@ function makeBuddies(){
     
     const ul = $('<ul>').addClass('buddies')
     $(aside).append(ul)
-    for(let i =0; i < buddies.length; i++){
-    const li = $('<li>').text(buddies[i])
-    $(ul).append(li)
+  //   for(let i =0; i < buddies.length; i++){
+  //   const li = $('<li>').text(buddies[i])
+  //   $(ul).append(li)
   
 
-  }
+  // }
 }
 makeBuddies();
 
 function beautifulStranger(){
 // change the `'Strider'` text to `'Aragorn'`
-ul.buddies.text('Aragon')
+//ul.buddies.text('Aragon')
 }
 
 beautifulStranger();
 
 function leaveTheShire(){
-  // your answers here
+  for(let i =0; i < buddies.length; i++){
+    const li = $('<li>').text(buddies[i])
+    $(ul).append(li)
+  }
+
 }
 
 leaveTheShire();
 
 function forgeTheFellowship() {
-  // your answers here
+  const syn = $('<div>').appendTo($('article').eq(1))
+ // create a new div called `'the-fellowship'` within `rivendell`
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+   // after each character is added make an alert that they // have joined your party
 }
 
 forgeTheFellowship();
 
 function theBalrog(){
-  // your answers here
+  // change the `'Gandalf'` text to `'Gandalf the White'`
+   // apply the following style to the element, make the
+   ul.buddies.css({
+  'border-color': 'grey',
+  'background-color': 'white'
+}) 
+   // background 'white', add a grey border
 }
 
 theBalrog();
