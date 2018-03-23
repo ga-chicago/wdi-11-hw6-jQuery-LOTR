@@ -68,14 +68,18 @@ function makeBuddies(){
 makeBuddies();
 
 function beautifulStranger(){
-  $('li').eq(7).text('Aragorn')
+
+
+  
+  $("li:contains('Strider')").text('Aragorn')
+  
   
 }
 
 beautifulStranger();
 
 function leaveTheShire(){
-  // your answers here
+  $('.hobbit').appendTo($('article').eq(1))
 }
 
 leaveTheShire();
