@@ -93,19 +93,12 @@ function makeBuddies(){
 
 makeBuddies();
 
-// function beautifulStranger(){
-//   // change the `'Strider'` text to `'Aragorn'`
-//   let buddyLis = jQuery('li')
-//   console.log(buddyLis)
-//   let buddyRename = $('Strider')
+function beautifulStranger(){
+  // change the `'Strider'` text to `'Aragorn'`
+  $("li:contains('Strider')").text("Aragorn");
+}
 
-//   for(let prop in buddyLis.length) {
-//     if(buddyLis[i].innerText === buddyRename);
-//   } 
-//   return buddyLis[i].text("Aragorn")
-// }
-
-// beautifulStranger();
+beautifulStranger();
 
 function leaveTheShire(){
   // assemble the `hobbits` and move them to `rivendell`
@@ -135,31 +128,65 @@ function forgeTheFellowship() {
 forgeTheFellowship();
 
 function theBalrog(){
-  // your answers here
+  // change the `'Gandalf'` text to `'Gandalf the White'`
+const Gandalf = $('li:contains("Gandalf the Grey") ');
+Gandalf.text("Gandalf the White");
+
+// apply the following style to the element, make the // background 'white', add a grey border
+Gandalf.css({"background-color": "white","border": "solid 1px grey"});
+
 }
 
 theBalrog();
 
 function hornOfGondor() {
-  // your answers here
+   // pop up an alert that the horn of gondor has been blown
+   alert("The horn of gondor has been blown! Boromir's been killed by the Uruk-hai.")
+   // Boromir's been killed by the Uruk-hai!
+   // Remove `Boromir` from the Fellowship
+   $('li:contains("Boromir")').remove();
+
 }
 
 hornOfGondor();
 
 function itsDangerousToGoAlone() {
-  // your answers here
+    // add a div with an id of `'mount-doom'` to `Mordor`
+  let mountDoomDiv = $('<div>').attr('id', 'mount-doom')
+  mountDoomDiv.appendTo($('article')[2]);
+
+  let ulMordor = $('<ul>');
+  let liMordor = $('<li>');
+  ulMordor.appendTo((liMordor));
+  liMordor.appendTo((liMordor));
+
+  // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+  let moveFrodo = $('li:contains("Frodo Baggins")');
+  let moveSam = $('li:contains("Samwise \'Sam\' Gamgee")');
+  moveFrodo.appendTo($('article')[2]);
+  moveSam.appendTo($('article')[2]);
 }
 
 itsDangerousToGoAlone();
 
 function weWantsIt() {
-  // your answers here
+    // Create a div with an id of `'gollum'` and add it to Mordor
+    let gollum = $('<div>').attr('id', 'gollum').appendTo($('article')[2]);
+    // Remove `the ring` from `Frodo` and give it to `Gollum`
+    // let theRing = $('id:contains("the-ring")')
+    // theRing.appendTo(gollum);
+
+   // Move Gollum into Mount Doom
+   $('div contains: ("gollum")').appendTo($(mountDoomDiv))
 }
 
 weWantsIt();
 
 function thereAndBackAgain(){
   // your answers here
+  // let moveHobbits = $('li.hobbit');
+  // //move to ulRivendell
+  // moveHobbits.appendTo($('article')[0]);
 }
 
 thereAndBackAgain();
