@@ -93,7 +93,7 @@ beautifulStranger();
 
 function leaveTheShire(){
   // assembly the hobbits and move them to rivendell
-  const $rivendell = $($('article')[1]);
+  const $rivendell = $($('<article>')[1]);
   $('ul').appendTo($rivendell);
 }
 
@@ -101,8 +101,8 @@ leaveTheShire();
 
 function forgeTheFellowship() {
   // create a new div called 'the-fellowship' within 'rivendell'
-  const $rivendell = $($('article')[1]);
-  const $newDiv = $('div').attr('id', 'the-fellowship');
+  const $rivendell = $($('<article>').eq(1));
+  const $newDiv = $('<div>').attr('id', 'the-fellowship');
   $newDiv.appendTo($rivendell);
     for(i = 0; i < hobbits.length; i++){
     //console.log(hobbits[i])
@@ -117,31 +117,58 @@ function forgeTheFellowship() {
 forgeTheFellowship();
 
 function theBalrog(){
-  // your answers here
+  const $gandalfTheWhite = $('li').eq(4).text("Gandalf the White");
+  $gandalfTheWhite.css({
+    'background': 'white',
+    'border': '5px solid gray'
+  })
 }
 
 theBalrog();
 
 function hornOfGondor() {
-  // your answers here
+  alert("The horn of gondor has been blown! Boromir is dead - killed by the Uruk-hai.");
+  const $boromir = $('<li>').eq(8);
+  console.log($boromir);
+  $boromir.remove();
+
 }
 
 hornOfGondor();
 
 function itsDangerousToGoAlone() {
-  // your answers here
+  const $mordor = $('article').eq(2);
+  const $mountDoom = $('<div>').attr('id', "Mount-Doom")
+  $mordor.append($mountDoom);
+  //console.log($mordor);
+  const $am = $('li').eq(1);
+  //console.log($am);
+  const $frodo = $('li').eq(0);
+  //console.log($frodo);
+  $am.appendTo($mordor);
+  $frodo.appendTo($mordor);
 }
 
 itsDangerousToGoAlone();
 
 function weWantsIt() {
-  // your answers here
+  const $mordor = $('article').eq(2);
+  const $gollum = $('<div>').attr('id', "Gollum");
+  $gollum.appendTo($mordor);
+  $('#the-ring').appendTo($gollum);
+
 }
 
 weWantsIt();
 
 function thereAndBackAgain(){
-  // your answers here
+  $gollum.remove();
+  const $theShire = $($('article')[0]);
+  for(i = 0; i < hobbits.length; i++){
+    //console.log(hobbits[i])
+    ('<li>'+ hobbits[i] +'</li>').appendTo($theShire);
+ }
+
 }
 
 thereAndBackAgain();
