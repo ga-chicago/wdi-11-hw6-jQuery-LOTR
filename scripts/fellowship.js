@@ -41,21 +41,28 @@ function makeHobbits(){
   const $ul = $('<ul/>');
   console.log($ul, "<------ ul")
   $theShire.append($ul);
-  //const $li = $('<li>').text;
-  //$ul.append($li);
- for(i = 0; i < hobbits.length; i++){
-  console.log(hobbits[i])
-   $ul.append('<li>'+ hobbits[i] +'</li>');
   // display an `unordered list` of hobbits in the shire
   // (which is the second article tag on the page)
   // give each hobbit a class of `hobbit`
+  for(i = 0; i < hobbits.length; i++){
+    console.log(hobbits[i])
+    $ul.append('<li>'+ hobbits[i] +'</li>');
  }
-}
+};
 
 makeHobbits();
 
 function keepItSecretKeepItSafe(){
-  // your answers here
+  // create a div with an id of "the-ring"
+  const $newDiv = $($('<div>'));
+  // give the div a class of 'magic-imbued-jewlery'
+  $newDiv.addClass('magic-imbued-jewlery');
+  $newDiv.attr('id', "the-ring");
+  const $frodo = $('li')[0];
+  //console.log($newDiv);
+  //console.log($frodo);
+  //add the ring as a child of 'Frodo
+  $newDiv.appendTo($frodo);
 }
 
 keepItSecretKeepItSafe();
