@@ -68,8 +68,18 @@ function keepItSecretKeepItSafe(){
 keepItSecretKeepItSafe();
 
 function makeBuddies(){
-  // your answers here
-}
+  //create an 'aside' tag
+  const $newAside = $('<aside>');
+  //attach an unordered list of the 'buddies' in the aside
+  const $rivendell = $($('article')[1]);
+  console.log($rivendell);
+  const $ul2 = $('<ul/>');
+  $rivendell.append($ul2);
+  for(i = 0; i < buddies.length; i++){
+    console.log(buddies[i])
+    $ul2.append('<li>'+ buddies[i] +'</li>');
+  }
+};
 
 makeBuddies();
 
