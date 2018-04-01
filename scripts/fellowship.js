@@ -50,8 +50,6 @@ function makeHobbits(){
    // give each hobbit a class of `hobbit`
 }
   
-  
-
 makeHobbits();
 
 function keepItSecretKeepItSafe(){
@@ -59,6 +57,7 @@ function keepItSecretKeepItSafe(){
   const newDiv = $('<div>').attr('id', 'the-ring').addClass('magic-imbued-jewelry');
   
    // give the div a class of `'magic-imbued-jewelry'`
+   $(".hobitt")eq(0).append(newDiv)
     //('newDiv').appendTo($('li'))
    // add the ring as a child of `Frodo`
 }
@@ -86,6 +85,7 @@ makeBuddies();
 
 function beautifulStranger(){
 // change the `'Strider'` text to `'Aragorn'`
+$('aside ul li').eq(3).text('Aragon');
 //ul.buddies.text('Aragon')
 }
 
@@ -102,10 +102,22 @@ function leaveTheShire(){
 leaveTheShire();
 
 function forgeTheFellowship() {
-  const syn = $('<div>').appendTo($('article').eq(1))
- // create a new div called `'the-fellowship'` within `rivendell`
-   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
-   // after each character is added make an alert that they // have joined your party
+  const newDiv = $('<div class="the-fellowship">').appendTo($('article').eq(1))
+ // create a new div called 
+ //`'the-fellowship'` within `rivendell`
+ const ul = $('aside ul');
+   // add each `hobbit` and `buddy` one 
+  const li = $('aside ul li')
+   //at a time to `'the-fellowship'`
+   const newUl = $('<ul>')
+   newUl.appendTo(newDiv)
+   // after each character is added make an alert
+   for(i= 0; i < li.length; i++) {
+    li = li.eq(i);
+    li.appendTo(newUl);
+    alert(li.text() + "has joined the party");
+   }
+   // that they // have joined your party
 }
 
 forgeTheFellowship();
@@ -113,35 +125,56 @@ forgeTheFellowship();
 function theBalrog(){
   // change the `'Gandalf'` text to `'Gandalf the White'`
    // apply the following style to the element, make the
+   const Gandalf = $('.the-fellowship ul li').eq(0);
+   Gandalf.text('Gandalf the White');
    ul.buddies.css({
-  'border-color': 'grey',
-  'background-color': 'white'
-}) 
+  'border-color': 'solid 1px grey',
+  'background-color': 'white'}); 
    // background 'white', add a grey border
 }
 
 theBalrog();
 
 function hornOfGondor() {
-  // your answers here
+ alert('The horn of gondor has been blown !')
+ $('.the-fellowship ul li').eq(4).remove();
 }
 
 hornOfGondor();
-
+// ```js
+// var itsDangerousToGoAlone = function (){
+//// take `Frodo` and `Sam` out of the fellowship 
+// and move // them to `Mordor`
+//// add a div with an id of `'mount-doom'` to `Mordor`
+// };
+// ```
 function itsDangerousToGoAlone() {
-  // your answers here
+  const frodo = $('.hobbit').eq(0)
+  const sam = $('.hobbit').eq(1)
+  
+
+  const mordor = $('article').eq(2)
+  mordor.append(frodo);
+  mordor.append(sam);
+  mordor.append($('<div id="mount-doom">'));
+
 }
 
 itsDangerousToGoAlone();
 
 function weWantsIt() {
-  // your answers here
+   const mordor = $('article').eq(2);
+   mordor.append($('<div id="#gollum>'));
+   $('#gollum').appendTo($('#mount-doom'));
+
 }
 
 weWantsIt();
 
 function thereAndBackAgain(){
-  // your answers here
+  $('#gollum').remove();
+$('#the-ring').remove();
+$('.hobbit').appendTo($('article').eq(0));
 }
 
 thereAndBackAgain();
